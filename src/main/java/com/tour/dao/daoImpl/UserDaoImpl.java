@@ -4,7 +4,7 @@ import com.tour.dao.BaseDao;
 import com.tour.dao.UserDao;
 import com.tour.domain.User;
 import com.tour.exception.DaoException;
-import org.hibernate.Query;
+import com.tour.util.DaoUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,10 +48,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findUserByTel(String tel) throws DaoException {
         String hql = "from User u where u.userTel = ?";
-        Query query = getSession().createQuery(hql);
-        query.setParameter(0, tel);
-        List<User> list = query.list();
-        if (list == null || list.size() == 0){
+        String[] params = {tel};
+        List<User> list = DaoUtil.getListResultByHql(getSession(), hql, params);
+        if (DaoUtil.isNullForList(list)){
             return null;
         }
         return list.get(0);
@@ -60,15 +59,12 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findUserByTelAndPwd(String tel, String pwd) throws DaoException {
         String hql = "from User u where u.userTel = ? and u.userPwd = ?";
-        Query query = getSession().createQuery(hql);
-        query.setParameter(0, tel);
-        query.setParameter(1, pwd);
-        List<User> list = query.list();
-        if (list == null || list.size() == 0){
+        String[] params = {tel, pwd};
+        List<User> list = DaoUtil.getListResultByHql(getSession(), hql, params);
+        if (DaoUtil.isNullForList(list)){
             return null;
         }
         return list.get(0);
     }
-
 
 }

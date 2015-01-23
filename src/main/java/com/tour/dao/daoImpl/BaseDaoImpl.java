@@ -10,9 +10,7 @@ import org.springframework.stereotype.Repository;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created by Administrator on 2015/1/20.
- */
+
 @Repository("baseDaoImpl")
 public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
 

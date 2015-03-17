@@ -13,6 +13,7 @@ public class Share extends BaseDomain{
     private String content;
     private String toUserTel;
     private String tag;
+    private String date;
 
     @Id
     @Column(name = "id")
@@ -88,5 +89,15 @@ public class Share extends BaseDomain{
         result = 31 * result + (toUserTel != null ? toUserTel.hashCode() : 0);
         result = 31 * result + (tag != null ? tag.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "date")
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -67,4 +67,11 @@ public class UserDaoImpl implements UserDao {
         return list.get(0);
     }
 
+    @Override
+    public String findAllFriends(String userTel) throws DaoException {
+        User user = findUserByTel(userTel);
+        String friends = user.getFriend();
+        return friends;
+    }
+
 }

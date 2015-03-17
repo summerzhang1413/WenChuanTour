@@ -13,5 +13,6 @@ public interface UserDao {
 
     public User findUserByTelAndPwd(String tel, String pwd) throws DaoException;
 
+    public String findAllFriends(String userTel) throws DaoException;
 
 }

@@ -28,6 +28,7 @@
                 <value>com.tour.domain.Goodsorder</value>
                 <value>com.tour.domain.Messageboard</value>
                 <value>com.tour.domain.Share</value>
+                <value>com.tour.domain.News</value>
             </list>
         </property>
         <property name="dataSource" ref="dataSource"/>

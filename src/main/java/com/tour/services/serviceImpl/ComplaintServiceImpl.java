@@ -7,6 +7,8 @@ import com.tour.services.ComplaintService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("complaintServiceImpl")
 public class ComplaintServiceImpl implements ComplaintService {
 
@@ -16,5 +18,10 @@ public class ComplaintServiceImpl implements ComplaintService {
     @Override
     public void save(Complaint complaint) throws DaoException {
         complaintDao.save(complaint);
+    }
+
+    @Override
+    public List<Complaint> findComplaintByUserTel(String userTel) throws DaoException {
+        return complaintDao.findComplaintByUserTel(userTel);
     }
 }

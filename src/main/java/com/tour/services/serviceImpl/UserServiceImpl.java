@@ -31,4 +31,9 @@ public class UserServiceImpl implements UserService {
     public User findUserByTelAndPwd(String tel, String pwd) throws DaoException {
         return userDao.findUserByTelAndPwd(tel, pwd);
     }
+
+    @Override
+    public String findAllFriends(String userTel) throws DaoException {
+        return userDao.findAllFriends(userTel);
+    }
 }

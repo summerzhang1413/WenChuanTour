@@ -7,6 +7,7 @@
         <class>com.tour.domain.Messageboard</class>
         <class>com.tour.domain.User</class>
         <class>com.tour.domain.Share</class>
+        <class>com.tour.domain.News</class>
         <properties>
             <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/wenchuantour"/>
             <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
